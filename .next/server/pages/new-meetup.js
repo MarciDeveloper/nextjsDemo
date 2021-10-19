@@ -88,15 +88,15 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 3:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("RNiq");
+module.exports = __webpack_require__("hDrQ");
 
 
 /***/ }),
@@ -108,12 +108,14 @@ module.exports = require("next/router");
 
 /***/ }),
 
-/***/ "A3pG":
+/***/ "5Oeh":
 /***/ (function(module, exports) {
 
 // Exports
 module.exports = {
-	"list": "MeetupList_list__1iafn"
+	"form": "NewMeetupForm_form__2wUf9",
+	"control": "NewMeetupForm_control__Vi75y",
+	"actions": "NewMeetupForm_actions__2d-nQ"
 };
 
 
@@ -126,184 +128,10 @@ module.exports = require("react/jsx-runtime");
 
 /***/ }),
 
-/***/ "RNiq":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return /* binding */ getStaticProps; });
-
-// EXTERNAL MODULE: external "react/jsx-runtime"
-var jsx_runtime_ = __webpack_require__("F5FC");
-
-// EXTERNAL MODULE: external "next/head"
-var head_ = __webpack_require__("xnum");
-var head_default = /*#__PURE__*/__webpack_require__.n(head_);
-
-// EXTERNAL MODULE: external "mongodb"
-var external_mongodb_ = __webpack_require__("ykE2");
-
-// EXTERNAL MODULE: external "next/router"
-var router_ = __webpack_require__("4Q3z");
-
-// EXTERNAL MODULE: ./components/ui/Card.js
-var Card = __webpack_require__("leqP");
-
-// EXTERNAL MODULE: ./components/meetups/MeetupItem.module.css
-var MeetupItem_module = __webpack_require__("RPSF");
-var MeetupItem_module_default = /*#__PURE__*/__webpack_require__.n(MeetupItem_module);
-
-// CONCATENATED MODULE: ./components/meetups/MeetupItem.js
-
-
-
-
-
-
-function MeetupItem(props) {
-  const router = Object(router_["useRouter"])();
-
-  function showDetailsHandler() {
-    router.push('/' + props.id);
-  }
-
-  return /*#__PURE__*/Object(jsx_runtime_["jsx"])("li", {
-    className: MeetupItem_module_default.a.item,
-    children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])(Card["a" /* default */], {
-      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-        className: MeetupItem_module_default.a.image,
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("img", {
-          src: props.image,
-          alt: props.title
-        })
-      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
-        className: MeetupItem_module_default.a.content,
-        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h3", {
-          children: props.title
-        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("address", {
-          children: props.address
-        })]
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-        className: MeetupItem_module_default.a.actions,
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
-          onClick: showDetailsHandler,
-          children: "Show Details"
-        })
-      })]
-    })
-  });
-}
-
-/* harmony default export */ var meetups_MeetupItem = (MeetupItem);
-// EXTERNAL MODULE: ./components/meetups/MeetupList.module.css
-var MeetupList_module = __webpack_require__("A3pG");
-var MeetupList_module_default = /*#__PURE__*/__webpack_require__.n(MeetupList_module);
-
-// CONCATENATED MODULE: ./components/meetups/MeetupList.js
-
-
-
-
-function MeetupList(props) {
-  return /*#__PURE__*/Object(jsx_runtime_["jsx"])("ul", {
-    className: MeetupList_module_default.a.list,
-    children: props.meetups.map(meetup => /*#__PURE__*/Object(jsx_runtime_["jsx"])(meetups_MeetupItem, {
-      id: meetup.id,
-      image: meetup.image,
-      title: meetup.title,
-      address: meetup.address
-    }, meetup.id))
-  });
-}
-
-/* harmony default export */ var meetups_MeetupList = (MeetupList);
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__("cDcd");
-
-// CONCATENATED MODULE: ./pages/index.js
-
-
-
-
-
- // const DUMMY_MEETUPS = [
-//   {
-//     id: 'm1',
-//     title: 'A First Meetup',
-//     image:
-//       'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/1280px-Stadtbild_M%C3%BCnchen.jpg',
-//     address: 'Some address 5, 12345 Some City',
-//     description: 'This is a first meetup!',
-//   },
-//   {
-//     id: 'm2',
-//     title: 'A Second Meetup',
-//     image:
-//       'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/1280px-Stadtbild_M%C3%BCnchen.jpg',
-//     address: 'Some address 10, 12345 Some City',
-//     description: 'This is a second meetup!',
-//   },
-// ];
-
-function HomePage(props) {
-  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])(external_react_["Fragment"], {
-    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(head_default.a, {
-      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("title", {
-        children: "React Meetups"
-      })
-    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(meetups_MeetupList, {
-      meetups: props.meetups
-    }), ";"]
-  });
-} // export async function getServerSideProps(context) {
-//     const req = context.req;
-//     const res = context.res;
-//     //fetch data from an API
-//     return {
-//         props: {
-//             meetups: DUMMY_MEETUPS
-//         }
-//     };
-// }
-
-
-async function getStaticProps() {
-  //fetch data from an API
-  const client = await external_mongodb_["MongoClient"].connect("");
-  const db = client.db();
-  const meetupsCollection = db.collection("meetups");
-  const meetups = await meetupsCollection.find().toArray();
-  client.close();
-  return {
-    props: {
-      meetups: meetups.map(meetup => ({
-        title: meetup.title,
-        address: meetup.address,
-        image: meetup.image,
-        id: meetup._id.toString()
-      }))
-    },
-    revalidate: 1
-  };
-}
-/* harmony default export */ var pages = __webpack_exports__["default"] = (HomePage);
-
-/***/ }),
-
-/***/ "RPSF":
+/***/ "Fcsd":
 /***/ (function(module, exports) {
 
-// Exports
-module.exports = {
-	"item": "MeetupItem_item__3siMU",
-	"image": "MeetupItem_image__13rAP",
-	"content": "MeetupItem_content__3uEkT",
-	"actions": "MeetupItem_actions__LvT9B"
-};
-
+module.exports = require("next/dist/next-server/lib/head");
 
 /***/ }),
 
@@ -311,6 +139,163 @@ module.exports = {
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "hDrQ":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__("F5FC");
+
+// EXTERNAL MODULE: external "next/router"
+var router_ = __webpack_require__("4Q3z");
+
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__("cDcd");
+
+// EXTERNAL MODULE: external "next/dist/next-server/lib/head"
+var head_ = __webpack_require__("Fcsd");
+var head_default = /*#__PURE__*/__webpack_require__.n(head_);
+
+// EXTERNAL MODULE: ./components/ui/Card.js
+var Card = __webpack_require__("leqP");
+
+// EXTERNAL MODULE: ./components/meetups/NewMeetupForm.module.css
+var NewMeetupForm_module = __webpack_require__("5Oeh");
+var NewMeetupForm_module_default = /*#__PURE__*/__webpack_require__.n(NewMeetupForm_module);
+
+// CONCATENATED MODULE: ./components/meetups/NewMeetupForm.js
+
+
+
+
+
+
+function NewMeetupForm(props) {
+  const titleInputRef = Object(external_react_["useRef"])();
+  const imageInputRef = Object(external_react_["useRef"])();
+  const addressInputRef = Object(external_react_["useRef"])();
+  const descriptionInputRef = Object(external_react_["useRef"])();
+
+  function submitHandler(event) {
+    event.preventDefault();
+    const enteredTitle = titleInputRef.current.value;
+    const enteredImage = imageInputRef.current.value;
+    const enteredAddress = addressInputRef.current.value;
+    const enteredDescription = descriptionInputRef.current.value;
+    const meetupData = {
+      title: enteredTitle,
+      image: enteredImage,
+      address: enteredAddress,
+      description: enteredDescription
+    };
+    props.onAddMeetup(meetupData);
+  }
+
+  return /*#__PURE__*/Object(jsx_runtime_["jsx"])(Card["a" /* default */], {
+    children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("form", {
+      className: NewMeetupForm_module_default.a.form,
+      onSubmit: submitHandler,
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: NewMeetupForm_module_default.a.control,
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("label", {
+          htmlFor: "title",
+          children: "Meetup Title"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("input", {
+          type: "text",
+          required: true,
+          id: "title",
+          ref: titleInputRef
+        })]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: NewMeetupForm_module_default.a.control,
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("label", {
+          htmlFor: "image",
+          children: "Meetup Image"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("input", {
+          type: "url",
+          required: true,
+          id: "image",
+          ref: imageInputRef
+        })]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: NewMeetupForm_module_default.a.control,
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("label", {
+          htmlFor: "address",
+          children: "Address"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("input", {
+          type: "text",
+          required: true,
+          id: "address",
+          ref: addressInputRef
+        })]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: NewMeetupForm_module_default.a.control,
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("label", {
+          htmlFor: "description",
+          children: "Description"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("textarea", {
+          id: "description",
+          required: true,
+          rows: "5",
+          ref: descriptionInputRef
+        })]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        className: NewMeetupForm_module_default.a.actions,
+        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+          children: "Add Meetup"
+        })
+      })]
+    })
+  });
+}
+
+/* harmony default export */ var meetups_NewMeetupForm = (NewMeetupForm);
+// CONCATENATED MODULE: ./pages/new-meetup/index.js
+
+
+// our-domain.com/new-meetup
+
+
+
+
+
+function NewMeetupPage() {
+  const router = Object(router_["useRouter"])();
+
+  async function addMeetupHandler(enteredMeetupData) {
+    const response = await fetch("/api/new-meetup", {
+      method: "POST",
+      body: JSON.stringify(enteredMeetupData),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+    const data = await response.json();
+    console.log(data);
+    router.push("/");
+  }
+
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])(external_react_["Fragment"], {
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])(head_default.a, {
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("title", {
+        children: "Add a new Meetup"
+      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("meta", {
+        name: "description",
+        content: "Add your own meetup"
+      })]
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(meetups_NewMeetupForm, {
+      onAddMeetup: addMeetupHandler
+    })]
+  });
+}
+
+/* harmony default export */ var new_meetup = __webpack_exports__["default"] = (NewMeetupPage);
 
 /***/ }),
 
@@ -344,20 +329,6 @@ module.exports = {
 	"card": "Card_card__3KSLO"
 };
 
-
-/***/ }),
-
-/***/ "xnum":
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
-
-/***/ }),
-
-/***/ "ykE2":
-/***/ (function(module, exports) {
-
-module.exports = require("mongodb");
 
 /***/ })
 
